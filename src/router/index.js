@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import NotFound404 from '../views/404.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,10 @@ const router = createRouter({
     //   path: '/about',
     //   redirect:{name: 'about'}
     // }
+    {
+      path: '/:catchAll(.*)',
+      component: NotFound404
+    }
   ],
 })
 
